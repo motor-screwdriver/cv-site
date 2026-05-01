@@ -1,0 +1,10 @@
+motorscrewdriver.tech {
+	root * /srv
+	encode gzip
+	try_files {path} /index.html
+	file_server
+}
+
+www.motorscrewdriver.tech {
+	redir https://motorscrewdriver.tech{uri} permanent
+}
