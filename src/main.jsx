@@ -1,92 +1,78 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import ArrowUpRight from 'lucide-react/dist/esm/icons/arrow-up-right.mjs';
+import Bolt from 'lucide-react/dist/esm/icons/bolt.mjs';
+import Drill from 'lucide-react/dist/esm/icons/drill.mjs';
 import Link2 from 'lucide-react/dist/esm/icons/link-2.mjs';
 import Mail from 'lucide-react/dist/esm/icons/mail.mjs';
+import Wrench from 'lucide-react/dist/esm/icons/wrench.mjs';
 import X from 'lucide-react/dist/esm/icons/x.mjs';
+import teamLogo from './assets/team-logo.png';
+import photoKirill from './assets/kirill.jpg';
+import photoMisha from './assets/misha.jpg';
+import photoArsen from './assets/arsen.jpg';
+import photoIlya from './assets/ilya.jpg';
 import './styles.css';
 
-/** photo: URL или null. links: href пустой — показывается плейсхолдер */
+/** photo: imported image URL or null. Empty link href shows a placeholder state */
 const team = [
   {
-    initials: 'КЕ',
-    name: 'Кирилл Ефимович',
+    initials: 'KE',
+    name: 'Kirill Yefimovich',
     role: 'Team Lead · Frontend',
-    photo: null,
-    skills: ['UX', 'React', 'Питч'],
+    photo: photoKirill,
+    skills: ['Full-stack & web', 'Languages & frameworks', 'DevOps & cloud', 'Data & tooling'],
     bio:
-      'Ведёт продукт от формулировки ценности до экрана и защиты: сценарий, UX, фронт и рассказ для жюри или заказчика. Сводит в одну линию то, что команда делает и зачем это важно пользователю.',
-    prizes: ['— укажите награды', '—'],
+      'Shapes how the team tells its story—demo flow, framing for judges and partners, and keeping the product narrative coherent from idea to delivery. Focused on clarity and momentum, not on a fixed checklist of tools.',
+    prizes: ['— add awards', '—'],
     links: [
-      { label: 'GitHub', href: '' },
-      { label: 'Telegram', href: '' },
-      { label: 'Сайт', href: '' },
+      { label: 'GitHub', href: 'https://github.com/lanebo1' },
+      { label: 'Telegram', href: 'https://t.me/Cblblblblblp' },
     ],
   },
   {
-    initials: 'МТ',
-    name: 'Михаил Трифонов',
-    role: 'Full-stack',
-    photo: null,
-    skills: ['React', 'API', 'Данные'],
+    initials: 'MT',
+    name: 'Mikhail Trifonov',
+    role: 'Backend (JVM)',
+    photo: photoMisha,
+    skills: ['Java & Scala', 'Services & APIs', 'Data & messaging', 'Platform engineering'],
     bio:
-      'Сшивает клиент и сервер: контракты API, состояние в интерфейсе, ошибки и граничные случаи. Держит в одном темпе данные и UI, чтобы демо не «отваливалось» на неожиданном шаге.',
+      'Builds and hardens server-side systems where correctness and throughput matter. Comfortable deep in services, contracts, and integration—and in keeping production behavior predictable when the scenario gets messy.',
     prizes: ['—', '—'],
     links: [
-      { label: 'GitHub', href: '' },
-      { label: 'Telegram', href: '' },
-      { label: 'LinkedIn', href: '' },
+      { label: 'GitHub', href: 'https://github.com/LuminiteTime' },
+      { label: 'Telegram', href: 'https://t.me/LuminiteTime' },
     ],
   },
   {
-    initials: 'АГ',
-    name: 'Арсен Галиев',
-    role: 'Backend · collab',
-    photo: null,
-    skills: ['Realtime', 'Sync', 'Node'],
+    initials: 'AG',
+    name: 'Arsen Galiev',
+    role: 'Cybersecurity · Blue team',
+    photo: photoArsen,
+    skills: ['AppSec & DevSecOps', 'Full-stack delivery', 'Detection & analytics', 'Automation'],
     bio:
-      'Отвечает за совместную работу и поток событий: синхронизация клиентов, устойчивость бэкенда под нагрузкой, предсказуемое поведение realtime-фич без сюрпризов в сценарии.',
+      'Cybersecurity specialist who spends a lot of time in CTFs and on the defensive side: primarily blue-team work, forensics, and making sense of artifacts and telemetry so the team can respond with confidence—not guesswork.',
     prizes: ['—', '—'],
     links: [
-      { label: 'GitHub', href: '' },
-      { label: 'Telegram', href: '' },
-      { label: 'Сайт', href: '' },
+      { label: 'GitHub', href: 'https://github.com/projacktor' },
+      { label: 'Telegram', href: 'https://t.me/rosehipbloom' },
     ],
   },
   {
-    initials: 'ИН',
-    name: 'Илья-Линь Нгуен',
+    initials: 'IN',
+    name: 'Ilya-Linh Nguyen',
     role: 'DevOps',
-    photo: null,
-    skills: ['Deploy', 'CI/CD', 'Мониторинг'],
+    photo: photoIlya,
+    skills: ['Deploy', 'CI/CD', 'Monitoring', 'Linux', 'Docker', 'Kubernetes', 'IaC'],
     bio:
-      'Поднимает контур под релиз: пайплайны, секреты, health-checks и откат. Снимает риск «всё упало перед показом»: мониторинг, логи и спокойный deploy, когда срок уже горит.',
+      'DevOps engineer—owns the path from commit to running systems: pipelines, observability, Linux hosts, containers, clusters, and infrastructure-as-code, so the team can ship and roll back without drama.',
     prizes: ['—', '—'],
     links: [
-      { label: 'GitHub', href: '' },
-      { label: 'Telegram', href: '' },
-      { label: 'LinkedIn', href: '' },
+      { label: 'GitHub', href: 'https://github.com/ilyalinhnguyen' },
+      { label: 'Telegram', href: 'https://t.me/pickpusha' },
     ],
   },
-];
-
-const bandWhy = {
-  line: 'Синхрон команды · Живой продукт · Спокойный релиз',
-  detail:
-    'Двигаемся синхронно: меньше перекладываний между ролями, больше согласованных решений. В приоритете то, что можно открыть в браузере и проверить в проде, а не красивая «оболочка» без сценария.',
-};
-const bandValues = {
-  line: 'Роль ясна · Сценарий первым · Короткий цикл',
-  detail:
-    'У каждого — свой слой продукта без размытия ответственности. Сначала собираем пользовательский путь, потом усиливаем детали. Гипотезы проверяем короткими итерациями, без бесконечной полировки в вакууме.',
-};
-const bandFocus = [
-  { title: 'прототип', text: 'Быстро собираем первый рабочий контур, чтобы увидеть риски раньше срока.' },
-  { title: 'код', text: 'Интерфейс, API и данные в одной связке — без разрыва между «красиво» и «работает».' },
-  { title: 'деплой', text: 'Публичный контур, мониторинг и откат — чтобы релиз не превращался в лотерею.' },
-  { title: 'full stack', text: 'От экрана до инфраструктуры: закрываем сквозной сценарий силами четырёх профилей.' },
-  { title: 'ship', text: 'Выводим в релиз то, что можно показать снаружи, а не только на слайдах.' },
 ];
 
 const BRAND_FIRST = 'motor';
@@ -95,7 +81,7 @@ const BRAND_SECOND = 'screwdriver';
 function TypewriterBrand() {
   const [line1, setLine1] = useState('');
   const [line2, setLine2] = useState('');
-  /** block1 | block2 — палочка при наборе; ul1 | ul2 — мигающая полоска при паузе и стирании */
+  /** block1 | block2: block caret while typing; ul1 | ul2: underline blink on pause / erase */
   const [caret, setCaret] = useState('');
   const timeoutsRef = useRef([]);
 
@@ -200,6 +186,38 @@ function TypewriterBrand() {
   );
 }
 
+function HeroToolDecor() {
+  const reduceMotion = useReducedMotion();
+
+  const floatTransition = { duration: 3.2, repeat: Infinity, ease: 'easeInOut' };
+
+  return (
+    <div className="hero-tools" aria-hidden="true">
+      <motion.span
+        className="hero-tools__cell"
+        animate={reduceMotion ? undefined : { y: [0, -6, 0], rotate: [-2, 4, -2] }}
+        transition={floatTransition}
+      >
+        <Drill className="hero-tools__icon" strokeWidth={1.65} size={36} />
+      </motion.span>
+      <motion.span
+        className="hero-tools__cell hero-tools__cell--pulse"
+        animate={reduceMotion ? undefined : { scale: [1, 1.08, 1], opacity: [0.85, 1, 0.85] }}
+        transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <Bolt className="hero-tools__icon" strokeWidth={1.65} size={34} />
+      </motion.span>
+      <motion.span
+        className="hero-tools__cell"
+        animate={reduceMotion ? undefined : { rotate: [0, 16, -10, 0] }}
+        transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <Wrench className="hero-tools__icon hero-tools__icon--wrench" strokeWidth={1.65} size={32} />
+      </motion.span>
+    </div>
+  );
+}
+
 function Particles() {
   const canvasRef = useRef(null);
 
@@ -247,7 +265,7 @@ function Particles() {
         if (particle.x < 0 || particle.x > width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > height) particle.vy *= -1;
         context.beginPath();
-        context.fillStyle = particle.red ? 'rgba(15, 118, 110, 0.55)' : 'rgba(90, 96, 108, 0.22)';
+        context.fillStyle = particle.red ? 'rgba(255, 122, 0, 0.55)' : 'rgba(120, 118, 110, 0.18)';
         context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         context.fill();
         for (let next = index + 1; next < particles.length; next += 1) {
@@ -256,7 +274,7 @@ function Particles() {
           const dy = particle.y - other.y;
           const distance = Math.hypot(dx, dy);
           if (distance < 100) {
-            context.strokeStyle = `rgba(15, 118, 110, ${0.07 * (1 - distance / 100)})`;
+            context.strokeStyle = `rgba(255, 122, 0, ${0.08 * (1 - distance / 100)})`;
             context.lineWidth = 1;
             context.beginPath();
             context.moveTo(particle.x, particle.y);
@@ -311,7 +329,7 @@ function CursorTrail() {
         .map((point, index) => {
           point.life -= 0.04;
           const size = Math.max(4, 20 - index * 1.2);
-          return `radial-gradient(circle ${size}px at ${point.x}px ${point.y}px, rgba(15,118,110,${Math.max(point.life, 0) * 0.12}), transparent 72%)`;
+          return `radial-gradient(circle ${size}px at ${point.x}px ${point.y}px, rgba(255,122,0,${Math.max(point.life, 0) * 0.14}), transparent 72%)`;
         })
         .filter(Boolean);
       trail.style.background = segments.join(',');
@@ -338,7 +356,7 @@ function FaceThumb({ member, onOpen }) {
       style={{ '--face-shift': `${(member.initials.codePointAt(0) % 5) * 11}deg` }}
       onClick={() => onOpen(member)}
       aria-haspopup="dialog"
-      aria-label={`Карточка: ${member.name}`}
+      aria-label={`Open profile: ${member.name}`}
     >
       <span className="hero-face__ring">
         {member.photo ? (
@@ -398,7 +416,7 @@ function MemberModal({ member, onClose }) {
           type="button"
           className="modal-close"
           onClick={onClose}
-          aria-label="Закрыть"
+          aria-label="Close"
         >
           <X size={20} strokeWidth={2.25} aria-hidden="true" />
         </button>
@@ -423,21 +441,21 @@ function MemberModal({ member, onClose }) {
             <p className="modal-card__role">{member.role}</p>
             <p className="modal-card__bio">{member.bio}</p>
 
-            <p className="modal-card__label">Стек</p>
+            <p className="modal-card__label">Stack</p>
             <ul className="modal-chips">
               {member.skills.map((s) => (
                 <li key={s}>{s}</li>
               ))}
             </ul>
 
-            <p className="modal-card__label">Призы и этапы</p>
+            <p className="modal-card__label">Awards & milestones</p>
             <ul className="modal-prizes">
-              {member.prizes.map((row) => (
-                <li key={row}>{row}</li>
+              {member.prizes.map((row, index) => (
+                <li key={`${member.name}-prize-${index}`}>{row}</li>
               ))}
             </ul>
 
-            <p className="modal-card__label">Ссылки</p>
+            <p className="modal-card__label">Links</p>
             <div className="modal-links">
               {member.links.map(({ label, href }) =>
                 href ? (
@@ -447,7 +465,7 @@ function MemberModal({ member, onClose }) {
                 ) : (
                   <span key={label} className="modal-link modal-link--empty">
                     <Link2 size={14} aria-hidden="true" /> {label}
-                    <small>добавить</small>
+                    <small>add URL</small>
                   </span>
                 ),
               )}
@@ -466,14 +484,13 @@ function App() {
     <>
       <Particles />
       <CursorTrail />
-      <a className="skip-link" href="#content">К контенту</a>
+      <a className="skip-link" href="#content">Skip to content</a>
 
       <header className="topbar">
         <a href="#top" className="brand" translate="no">motorscrewdriver</a>
-        <nav aria-label="Навигация">
-          <a href="#team">Люди</a>
-          <a href="#more">Ещё</a>
-          <a href="#contact">Почта</a>
+        <nav aria-label="Primary">
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
         </nav>
       </header>
 
@@ -481,60 +498,53 @@ function App() {
         <section className="hero hero--compact" id="top" aria-labelledby="hero-title">
           <p className="section-label hero__label">
             <span aria-hidden="true" />
-            Команда
+            Motor screwdriver
           </p>
-          <TypewriterBrand />
-          <p className="hero__lede">Четверо · интерфейс · бэкенд · realtime · прод.</p>
+          <div className="hero__brand-row">
+            <div className="hero-brand-mark">
+              <img
+                src={teamLogo}
+                alt="MOTORSCREWDRIVER team logo — power drill with motor piston and flames"
+                className="hero-brand-mark__img"
+                width={800}
+                height={800}
+                decoding="async"
+              />
+            </div>
+            <div className="hero__intro-side">
+              <div className="hero-typewriter-slot">
+                <TypewriterBrand />
+              </div>
+              <div className="hero-tools-row">
+                <HeroToolDecor />
+              </div>
+              <p className="hero__lede">
+                <strong className="hero__lede-tagline">Powered by ideas. Driven by engineering.</strong>
+                <span className="hero__lede-line">Motorscrewdriver team — we make things work.</span>
+              </p>
+            </div>
+          </div>
 
           <div className="hero-team" id="team">
             {team.map((m) => (
               <FaceThumb key={m.name} member={m} onOpen={setOpenMember} />
             ))}
           </div>
-          <p className="hero__hint">Нажмите на круг с фото или инициалами — откроется карточка человека с ролью, стеком и ссылками.</p>
-
-          <div className="hero-actions">
-            <a className="button primary" href="mailto:team@motorscrewdriver.dev">
-              <Mail size={17} aria-hidden="true" /> Написать
-            </a>
-          </div>
-        </section>
-
-        <section className="band" id="more" aria-label="О команде">
-          <div className="band-block">
-            <h2 className="band-h">Почему</h2>
-            <p className="band-line">{bandWhy.line}</p>
-            <p className="band-detail">{bandWhy.detail}</p>
-          </div>
-          <div className="band-block">
-            <h2 className="band-h">Ценности</h2>
-            <p className="band-line">{bandValues.line}</p>
-            <p className="band-detail">{bandValues.detail}</p>
-          </div>
-          <h2 className="band-h band-h--inline">Фокус</h2>
-          <ul className="band-focus">
-            {bandFocus.map((item) => (
-              <li key={item.title}>
-                <strong>{item.title}</strong>
-                <span>{item.text}</span>
-              </li>
-            ))}
-          </ul>
         </section>
 
         <section className="contact-strip" id="contact" aria-labelledby="contact-heading">
           <div className="contact-strip__inner">
-            <h2 id="contact-heading" className="contact-strip__h">Связь</h2>
+            <h2 id="contact-heading" className="contact-strip__h">Contact</h2>
             <p className="contact-strip__text">
-              По брифу, срокам и составу: напишите на общий адрес — ответим, уточним задачу и предложим,
-              кто из команды логичнее подключается и в каком формате.
+              For briefs, timelines, and how we might fit, write to the shared address below—we will reply, clarify the
+              request, and suggest who on the team is the best match and how to collaborate.
             </p>
             <div className="contact-strip__actions">
-              <a className="button primary" href="mailto:team@motorscrewdriver.dev">
-                <Mail size={18} aria-hidden="true" /> team@motorscrewdriver.dev
+              <a className="button primary" href="mailto:motorscrewdriver@gmail.com">
+                <Mail size={18} aria-hidden="true" /> motorscrewdriver@gmail.com
               </a>
               <a className="button" href="#top">
-                <ArrowUpRight size={18} aria-hidden="true" /> Наверх
+                <ArrowUpRight size={18} aria-hidden="true" /> Back to top
               </a>
             </div>
           </div>
