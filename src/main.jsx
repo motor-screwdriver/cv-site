@@ -26,9 +26,9 @@ const team = [
     bio:
       'Shapes how the team tells its story—demo flow, framing for judges and partners, and keeping the product narrative coherent from idea to delivery. Focused on clarity and momentum, not on a fixed checklist of tools.',
     prizes: [
-      'Huawei TechArena Hackathon — 2nd place',
-      'Student of the Year (2×) — outstanding social impact',
-      'MTS True Tech Hack — winner, "Best solution on track" nomination',
+      'Winner & "Best Solution on Track" — MTS True Tech Hack | 2026',
+      'Student of the Year (2×) — Innopolis University | 2025, 2026',
+      '2nd Place — TechArena (Huawei) Hackathon Kazan | 2025',
     ],
     links: [
       { label: 'GitHub', href: 'https://github.com/lanebo1' },
@@ -44,9 +44,9 @@ const team = [
     bio:
       'Builds and hardens server-side systems where correctness and throughput matter. Works across the JVM stack and in Python when the task calls for it—services, contracts, and integration—with an eye on predictable behavior under load. At work he contributes to building a Data Platform.',
     prizes: [
-      'Huawei TechArena Hackathon — 2nd place',
-      'MTS True Tech Hack — winner, "Best solution on track" nomination',
-      'Student of the Year — outstanding social impact',
+      'Winner & "Best Solution on Track" — MTS True Tech Hack | 2026',
+      '2nd Place — TechArena (Huawei) Hackathon Kazan | 2025',
+      'Student of the Year — outstanding social impact | 2025',
     ],
     links: [
       { label: 'GitHub', href: 'https://github.com/LuminiteTime' },
@@ -63,10 +63,10 @@ const team = [
     bio:
       'Cybersecurity specialist who spends a lot of time in CTFs and on the defensive side: primarily blue-team work, forensics, and making sense of artifacts and telemetry so the team can respond with confidence—not guesswork.',
     prizes: [
-      'Cyber Battle URFU CTF — winner (blue team)',
-      'CTF “The Secret of the Third Capital” — 1st place in the Republic of Tatarstan',
-      'BEZUMhack 2.0 — winner',
-      'Student of the Year (2×) — outstanding social impact',
+      'Winner (blue team) — Cyber Battle URFU CTF | 2025',
+      '1st Place in the Republic of Tatarstan — CTF “The Secret of the Third Capital” | 2026',
+      'Winner — BEZUMhack 2.0 | 2026',
+      'Student of the Year (2×) — outstanding social impact | 2025, 2026',
     ],
     links: [
       { label: 'GitHub', href: 'https://github.com/projacktor' },
@@ -82,9 +82,9 @@ const team = [
     bio:
       'DevOps engineer—owns the path from commit to running systems: pipelines, observability, Linux hosts, containers, clusters, and infrastructure-as-code, so the team can ship and roll back without drama.',
     prizes: [
-      'MTS True Tech Hack — winner, "Best solution on track" nomination',
-      'Cyber Battle URFU CTF — winner (blue team)',
-      'VNEDREID Hackathon — finalist',
+      'Winner, "Best Solution on Track" nomination — MTS True Tech Hack | 2026',
+      'Winner (blue team) — Cyber Battle URFU CTF | 2025',
+      'Finalist — VNEDREID Hackathon | 2025',
     ],
     links: [
       { label: 'GitHub', href: 'https://github.com/ilyalinhnguyen' },
