@@ -27,7 +27,7 @@ const team = [
       'Shapes how the team tells its story—demo flow, framing for judges and partners, and keeping the product narrative coherent from idea to delivery. Focused on clarity and momentum, not on a fixed checklist of tools.',
     prizes: [
       'Winner & "Best Solution on Track" — MTS True Tech Hack | 2026',
-      'Student of the Year (2×) — Innopolis University | 2025, 2026',
+      'Innopolis University Student of the Year (2×) — outstanding social impact | 2025, 2026',
       '2nd Place — TechArena (Huawei) Hackathon Kazan | 2025',
     ],
     links: [
@@ -46,7 +46,7 @@ const team = [
     prizes: [
       'Winner & "Best Solution on Track" — MTS True Tech Hack | 2026',
       '2nd Place — TechArena (Huawei) Hackathon Kazan | 2025',
-      'Student of the Year — outstanding social impact | 2025',
+      'Innopolis University Student of the Year — outstanding social impact | 2025',
     ],
     links: [
       { label: 'GitHub', href: 'https://github.com/LuminiteTime' },
@@ -66,7 +66,7 @@ const team = [
       'Winner (blue team) — Cyber Battle URFU CTF | 2025',
       '1st Place in the Republic of Tatarstan — CTF “The Secret of the Third Capital” | 2026',
       'Winner — BEZUMhack 2.0 | 2026',
-      'Student of the Year (2×) — outstanding social impact | 2025, 2026',
+      'Innopolis University Student of the Year (2×) — outstanding social impact | 2025, 2026',
     ],
     links: [
       { label: 'GitHub', href: 'https://github.com/projacktor' },
