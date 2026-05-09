@@ -1,24 +1,24 @@
-# motorscrewdriver CV site
+# Motorscrewdriver · team card website
 
-Одностраничный сайт-визитка команды для хакатонов. Визуальный стиль взят из pitch-презентации WikiLive: темный фон, красный акцент, крупная типографика, техно-подписи, частицы и cursor trail.
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![React](https://img.shields.io/badge/React-latest-149ECA?logo=react&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer%20Motion-latest-0055FF?logo=framer&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-dark%20%2B%20orange-111111)
 
-## Запуск
+A single-page team “business card” website for IT events.
+
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Локально сайт откроется на адресе, который покажет Vite, обычно `http://localhost:5000/`.
+Vite will print the local URL in the terminal (usually `http://localhost:5000/`).
 
-## Сборка
+## Production build
 
 ```bash
 npm run build
 ```
 
-Готовые файлы появятся в `dist/`.
-
-## Где править контент
-
-Основной контент команды, факты, стек и планы лежат в `src/main.jsx`. Визуальный стиль и адаптивность - в `src/styles.css`.
