@@ -19,7 +19,7 @@ import './styles.css';
 const team = [
   {
     initials: 'KE',
-    name: 'Kirill Yefimovich',
+    name: 'Kirill Efimovich',
     role: 'Team Lead · Development',
     photo: photoKirill,
     skills: ['Full-stack & web', 'Languages & frameworks', 'DevOps & cloud', 'Data & tooling'],
