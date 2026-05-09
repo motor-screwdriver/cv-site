@@ -20,12 +20,16 @@ const team = [
   {
     initials: 'KE',
     name: 'Kirill Yefimovich',
-    role: 'Team Lead · Frontend',
+    role: 'Team Lead · Development',
     photo: photoKirill,
     skills: ['Full-stack & web', 'Languages & frameworks', 'DevOps & cloud', 'Data & tooling'],
     bio:
       'Shapes how the team tells its story—demo flow, framing for judges and partners, and keeping the product narrative coherent from idea to delivery. Focused on clarity and momentum, not on a fixed checklist of tools.',
-    prizes: ['— add awards', '—'],
+    prizes: [
+      'Huawei TechArena Hackathon — 2nd place',
+      'Student of the Year (2×) — outstanding social impact',
+      'MTS True Tech Hack — winner, "Best solution on track" nomination',
+    ],
     links: [
       { label: 'GitHub', href: 'https://github.com/lanebo1' },
       { label: 'Telegram', href: 'https://t.me/Cblblblblblp' },
@@ -36,13 +40,18 @@ const team = [
     name: 'Mikhail Trifonov',
     role: 'Backend (JVM)',
     photo: photoMisha,
-    skills: ['Java & Scala', 'Services & APIs', 'Data & messaging', 'Platform engineering'],
+    skills: ['Java & Scala', 'Python', 'Services & APIs', 'Data & messaging', 'Platform engineering'],
     bio:
-      'Builds and hardens server-side systems where correctness and throughput matter. Comfortable deep in services, contracts, and integration—and in keeping production behavior predictable when the scenario gets messy.',
-    prizes: ['—', '—'],
+      'Builds and hardens server-side systems where correctness and throughput matter. Works across the JVM stack and in Python when the task calls for it—services, contracts, and integration—with an eye on predictable behavior under load. At work he contributes to building a Data Platform.',
+    prizes: [
+      'Huawei TechArena Hackathon — 2nd place',
+      'MTS True Tech Hack — winner, "Best solution on track" nomination',
+      'Student of the Year — outstanding social impact',
+    ],
     links: [
       { label: 'GitHub', href: 'https://github.com/LuminiteTime' },
       { label: 'Telegram', href: 'https://t.me/LuminiteTime' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mikhailtrifonov28/' },
     ],
   },
   {
@@ -53,7 +62,12 @@ const team = [
     skills: ['AppSec & DevSecOps', 'Full-stack delivery', 'Detection & analytics', 'Automation'],
     bio:
       'Cybersecurity specialist who spends a lot of time in CTFs and on the defensive side: primarily blue-team work, forensics, and making sense of artifacts and telemetry so the team can respond with confidence—not guesswork.',
-    prizes: ['—', '—'],
+    prizes: [
+      'Cyber Battle URFU CTF — winner (blue team)',
+      'CTF “The Secret of the Third Capital” — 1st place in the Republic of Tatarstan',
+      'BEZUMhack 2.0 — winner',
+      'Student of the Year (2×) — outstanding social impact',
+    ],
     links: [
       { label: 'GitHub', href: 'https://github.com/projacktor' },
       { label: 'Telegram', href: 'https://t.me/rosehipbloom' },
@@ -67,10 +81,16 @@ const team = [
     skills: ['Deploy', 'CI/CD', 'Monitoring', 'Linux', 'Docker', 'Kubernetes', 'IaC'],
     bio:
       'DevOps engineer—owns the path from commit to running systems: pipelines, observability, Linux hosts, containers, clusters, and infrastructure-as-code, so the team can ship and roll back without drama.',
-    prizes: ['—', '—'],
+    prizes: [
+      'MTS True Tech Hack — winner, "Best solution on track" nomination',
+      'Cyber Battle URFU CTF — winner (blue team)',
+      'VNEDREID Hackathon — finalist',
+      'Many hackathons and tech events — participant',
+    ],
     links: [
       { label: 'GitHub', href: 'https://github.com/ilyalinhnguyen' },
       { label: 'Telegram', href: 'https://t.me/pickpusha' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ilya-linh-nguyen/' },
     ],
   },
 ];
@@ -496,10 +516,6 @@ function App() {
 
       <main id="content">
         <section className="hero hero--compact" id="top" aria-labelledby="hero-title">
-          <p className="section-label hero__label">
-            <span aria-hidden="true" />
-            Motor screwdriver
-          </p>
           <div className="hero__brand-row">
             <div className="hero-brand-mark">
               <img
