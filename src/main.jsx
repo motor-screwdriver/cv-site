@@ -85,7 +85,6 @@ const team = [
       'MTS True Tech Hack — winner, "Best solution on track" nomination',
       'Cyber Battle URFU CTF — winner (blue team)',
       'VNEDREID Hackathon — finalist',
-      'Many hackathons and tech events — participant',
     ],
     links: [
       { label: 'GitHub', href: 'https://github.com/ilyalinhnguyen' },
