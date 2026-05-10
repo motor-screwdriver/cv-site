@@ -26,7 +26,7 @@ const team = [
     bio:
       'Shapes how the team tells its story—demo flow, framing for judges and partners, and keeping the product narrative coherent from idea to delivery. Focused on clarity and momentum, not on a fixed checklist of tools.',
     prizes: [
-      'Winner & "Best Solution on Track" — MTS True Tech Hack | 2026',
+      'Winner at "Best Solution on Track" — MTS True Tech Hack | 2026',
       'Innopolis University Student of the Year (2×) — outstanding social impact | 2025, 2026',
       '2nd Place — TechArena (Huawei) Hackathon Kazan | 2025',
     ],
@@ -44,7 +44,7 @@ const team = [
     bio:
       'Builds and hardens server-side systems where correctness and throughput matter. Works across the JVM stack and in Python when the task calls for it—services, contracts, and integration—with an eye on predictable behavior under load. At work he contributes to building a Data Platform.',
     prizes: [
-      'Winner & "Best Solution on Track" — MTS True Tech Hack | 2026',
+      'Winner at "Best Solution on Track" — MTS True Tech Hack | 2026',
       '2nd Place — TechArena (Huawei) Hackathon Kazan | 2025',
       'Innopolis University Student of the Year — outstanding social impact | 2025',
     ],
@@ -82,7 +82,7 @@ const team = [
     bio:
       'DevOps engineer—owns the path from commit to running systems: pipelines, observability, Linux hosts, containers, clusters, and infrastructure-as-code, so the team can ship and roll back without drama.',
     prizes: [
-      'Winner, "Best Solution on Track" nomination — MTS True Tech Hack | 2026',
+      'Winner at "Best Solution on Track" — MTS True Tech Hack | 2026',
       'Winner (blue team) — Cyber Battle URFU CTF | 2025',
       'Finalist — VNEDREID Hackathon | 2025',
     ],
